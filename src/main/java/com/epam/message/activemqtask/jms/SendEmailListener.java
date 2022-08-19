@@ -8,7 +8,7 @@ public class SendEmailListener {
 
     @JmsListener(
         destination = "order.topic", 
-        containerFactory = "topicFactory", 
+        containerFactory = "durableTopicFactory", 
         subscription = "email"
     )
     public void receiveOrderFromTopic(final String message) {
