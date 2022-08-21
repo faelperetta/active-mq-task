@@ -4,7 +4,7 @@ import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
 @Component
-public class OrderListener {
+public class OrderProcessorListener {
 
     @JmsListener(destination = "order.queue")
     public void receiveOrder(final String message) {

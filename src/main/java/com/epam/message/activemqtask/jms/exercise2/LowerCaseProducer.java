@@ -1,4 +1,4 @@
-package com.epam.message.activemqtask.jms;
+package com.epam.message.activemqtask.jms.exercise2;
 
 import javax.jms.JMSException;
 import javax.jms.TextMessage;
@@ -14,26 +14,23 @@ public class LowerCaseProducer {
 
     private final JmsTemplate jmsTemplate;
 
-    public LowerCaseProducer(@Qualifier("jmsTemplatePersistent") JmsTemplate jmsTemplate) {
+    public LowerCaseProducer(@Qualifier("jmsTemplatePersistent") final JmsTemplate jmsTemplate) {
         this.jmsTemplate = jmsTemplate;
     }
 
-    public String sendMesssage(String text) {
+    public String convertToUpperCase(final String text) {
         TextMessage response = (TextMessage) jmsTemplate.sendAndReceive(CONVERT_QUEUE, (s) -> {
             var message = s.createTextMessage();
             message.setText(text);
             return message;
         } );
 
-        var result = "";
-
+        String result;
         try {
             result = response.getText();
         } catch (JMSException e) {
-            result = "error";
+            result = "Error to read response text";
         }
-
         return result;
     }
-    
 }
