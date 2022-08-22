@@ -5,7 +5,6 @@ spring:
     password: admin
     packages:
       trust-all: false
-      trusted: com.mdrsolutions.SpringJmsExample
     pool:
       block-if-full: true
       block-if-full-timeout: -1
