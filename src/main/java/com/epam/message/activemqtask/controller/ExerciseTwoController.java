@@ -10,7 +10,7 @@ import com.epam.message.activemqtask.jms.exercise2.LowerCaseProducer;
 
 @RequestMapping(value = "converter")
 @RestController
-public class ConvertTextController {
+public class ExerciseTwoController {
 
     @Autowired
     private LowerCaseProducer lowerCaseProducer;

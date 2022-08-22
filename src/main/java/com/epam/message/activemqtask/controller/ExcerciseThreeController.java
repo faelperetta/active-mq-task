@@ -10,11 +10,11 @@ import com.epam.message.activemqtask.jms.exercise3.VirtualTopicOrderProducer;
 
 @RestController
 @RequestMapping(value = "virtual")
-public class OrderVirtualTopicController {
+public class ExcerciseThreeController {
 
     private final VirtualTopicOrderProducer virtualTopicProducer;
 
-    public OrderVirtualTopicController(final VirtualTopicOrderProducer virtualTopicProducer) {
+    public ExcerciseThreeController(final VirtualTopicOrderProducer virtualTopicProducer) {
         this.virtualTopicProducer = virtualTopicProducer;
     }
 

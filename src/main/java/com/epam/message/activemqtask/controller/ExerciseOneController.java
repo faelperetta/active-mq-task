@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "orders")
-public class TaskOneController {
+public class ExerciseOneController {
 
     private static final String ORDER_TOPIC = "order.topic";
     
     private final JmsTemplate jmsTemplate;
 
-    public TaskOneController(@Qualifier("pubJmsTemplate") final JmsTemplate jmsTemplate) {
+    public ExerciseOneController(@Qualifier("pubJmsTemplate") final JmsTemplate jmsTemplate) {
         this.jmsTemplate = jmsTemplate;
     }
 
